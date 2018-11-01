@@ -20,14 +20,14 @@ int BetterSearch(int a[],int len,int key){//单出口线性
     return i;
 }
 
-int OtherSearch(int a[],int len,int key){//保证有输出的线性查找
+int Sentienl_Search(int a[],int len,int key){//保证有输出的线性查找
     int last=a[len-1];
     int i = 0;
-    while(a[i]!=key){
+    while(a[i]!=key){//防止越界
         i++;
     }
     a[len-1]=last;
-    if(i<len-1||a[len-1]==key){
+    if(i<len-1||a[len-1]==key) {
         return i;
     }
     else

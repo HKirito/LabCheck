@@ -1,7 +1,5 @@
 #include "Fiblaq.h"
 
-
-
 int BETTER_LOOP_FEI(int n){
     int a,b;
     int result[1000];
