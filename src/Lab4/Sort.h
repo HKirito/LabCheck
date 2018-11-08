@@ -21,6 +21,8 @@ void Swap(int *a,int *b);
 
 void Caulate_Sort(int Array[], int len,int max);
 
+void quick_sort_1(int a[], int low, int high);
+
 void Faster_Sort(int Array[],int began,int end);
 
 void test4();
