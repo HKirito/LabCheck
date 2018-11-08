@@ -19,7 +19,6 @@ void toString(int a[],int n);
 
 void Swap(int *a,int *b);
 
-void Caulate_Sort(int Array[], int len,int max);
 
 void quick_sort_1(int a[], int low, int high);
 

@@ -85,28 +85,6 @@ void Swap(int *a, int *b) {
     *b = temp;
 }
 
-void Caulate_Sort(int Array[], int len, int max) {
-    int *c;
-    int *b;
-    c = (int *) malloc(sizeof(int) * max);
-    b = (int *) malloc(sizeof(int) * len);
-    for (int i = 0; i < max; i++)
-        c[i] = 0;//初始化
-    for (int j = 0; j < len; j++)
-        c[Array[j]] += 1;//统计Array内部元素为i的个数
-    for (int k = 1; k < max; k++)
-        c[k] = c[k - 1] + c[k];
-    for (int n = len - 1; n >= 0; n--) {
-        b[c[Array[n]] - 1] = Array[n];
-        c[Array[n]] -= 1;
-    }
-    for (int l = 0; l < len; l++) {
-        Array[l] = b[l];
-    }
-    free(c);
-    free(b);
-}
-
 void quick_sort_1(int a[], int low, int high) {
     if (low >= high) {
         return;
@@ -137,7 +115,6 @@ void quick_sort_1(int a[], int low, int high) {
         quick_sort_1(a, n + 1, high);
     }
 }
-
 
 void Faster_Sort(int Array[], int began, int end) {
     int i, j;
@@ -177,7 +154,7 @@ void test4() {
     start = clock();
 
     toString(a, 200);
-    Caulate_Sort(a, 200, 200);
+    BETTER_BubbleSort(a, 200);
     toString(a, 200);
 
     //time up!
