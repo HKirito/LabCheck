@@ -44,7 +44,9 @@ void test5(){
     start = clock();
 
     toNewString(a, 200);
+    printf("\n");
     Caulate_Sort(a, 200,200);
+    printf("\n");
     toNewString(a, 200);
 
     //time up!
