@@ -4,6 +4,8 @@
 #include "src/Lab3/Fiblaq.h"
 #include "src/Lab4/Sort.h"
 #include "src/Lab5/CaluaterSort.h"
+#include "src/Lab9/Encrypt.h"
+#include "src/Lab10/hfm.h"
 
 int main() {
 //    test1();
@@ -11,5 +13,7 @@ int main() {
 //    test3();
 //    test4();
 //    test5();
+//    Encrypt();
+      test10();
     return 0;
 }

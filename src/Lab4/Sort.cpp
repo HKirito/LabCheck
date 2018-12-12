@@ -41,6 +41,13 @@ void INSERT_SORT(int a[], int n) {
 
 }
 
+
+
+
+void BucketSort(int a[],int n){
+
+}
+
 void BubbleSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = i; j < n - 1; j++) {
@@ -83,6 +90,27 @@ void SelectSort(int a[], int n) {
             a[i]=t;
         }
     }
+}
+
+int getMax(int *p,int n){
+    int i;
+    int max = 0;
+    for (i = 0; i < n; i++) {
+        if (*(p+1)>max){
+            max = *( p + 1);
+        }
+    }
+    return max;
+}
+
+int getLoopTimes(int num){
+    int count = 1;
+    int temp = num / 10;
+    while (temp != 0){
+        count++;
+        temp = temp / 10;
+    }
+    return count;
 }
 
 void toString(int a[], int n) {
