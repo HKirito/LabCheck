@@ -16,7 +16,7 @@ void dijkstra(
         vector<int> &dist,//出发点到各点的最短路径长度
         vector<int> &path);
 
-void test6();
+void test7();
 
 
 #endif //LABCHECK1_DIJKSTRA_H

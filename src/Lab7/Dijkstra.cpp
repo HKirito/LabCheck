@@ -30,22 +30,22 @@ void dijkstra(
     }
 }
 
-void test6() {
+void test7() {
     int n_num, e_num, beg;//含义见下
-    cout << "输入点数、边数、出发点：";
+    cout << "Enter the point, length, fristpoint: ";
     cin >> n_num >> e_num >> beg;
     vector<vector<int> > adjmap(n_num, vector<int>(n_num, -1));//默认初始化邻接矩阵
     for (int i = 0, p, q; i != e_num; ++i) {
-        cout << "输入第" << i + 1 << "条边的起点、终点、长度（负值代表不联通）：";
+        cout << "input the " << i + 1 << " lenth begin,end,len(-1 means not found): ";
         cin >> p >> q;
         cin >> adjmap[p][q];
     }
     vector<int> dist, path;//用于接收最短路径长度及路径各点
     dijkstra(beg, adjmap, dist, path);
-    for (int i = 0; i != n_num; ++i) {
-        cout << beg << "到" << i << "的最短距离为" << dist[i] << "，反向打印路径：";
-        for (int w = i; path[w] >= 0; w = path[w])
-            cout << w << "<-";
+    for (int j = 1; j != n_num; j++) {
+        cout << beg << " to " << j << " the short distance is " << dist[j] << " ,print the s :";
+        for (int w = j; path[w] >= 0; w = path[w])
+            cout << w << " <- ";
         cout << beg << '\n';
     }
 }//
