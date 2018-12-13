@@ -5,6 +5,7 @@
 #include "src/Lab4/Sort.h"
 #include "src/Lab5/CaluaterSort.h"
 #include "src/Lab7/dijkstra.h"
+#include "src/Lab8/Heap.h"
 #include "src/Lab9/Encrypt.h"
 #include "src/Lab10/hfm.h"
 
@@ -14,8 +15,9 @@ int main() {
 //    test3();
 //    test4();
 //    test5();
-      test7();
+//    test7();
+      test8();
 //    Encrypt();
-//      test10();
+//    test10();
     return 0;
 }

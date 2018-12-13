@@ -133,10 +133,10 @@ void quick_sort_1(int a[], int low, int high) {
         int m = low + 1;
         int n = high;
         while (m <= n) {
-            while (a[m] <= a[low]) {
+            while (a[m] <= a[high]) {
                 m++;
             }
-            while (a[n] > a[low]) {
+            while (a[n] > a[high]) {
                 n--;
             }
             if (m <= n) {
@@ -147,9 +147,9 @@ void quick_sort_1(int a[], int low, int high) {
                 n--;
             }
         }
-        if (n != low) {
+        if (n != high) {
             int temp = a[n];
-            a[n] = a[low];
+            a[n] = a[high];
             a[low] = temp;
         }
         quick_sort_1(a, low, n - 1);
@@ -195,7 +195,7 @@ void test4() {
     start = clock();
 
     toString(a, 200);
-    SelectSort(a, 200);
+    Faster_Sort(a,0, 199);
     toString(a, 200);
 
     //time up!
