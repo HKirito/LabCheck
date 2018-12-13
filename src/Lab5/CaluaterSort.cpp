@@ -3,12 +3,32 @@
 #include <cstdlib>
 #include <ctime>
 
-void toNewString(int a[], int n) {
+using namespace std;
+
+template <class T>
+void toNewString(T a[], int n) {
     for (int i = 0; i < n; i++) {
-        printf("%4d ", a[i]);
+        cout<<a[i]<<"\t";
     }
-    printf("\n");
+    cout<<endl;
 }
+
+void Card_Sort(char **a, int d, int length) {
+
+    for (int i = d - 1; i >= 0; i--) {
+        char *temp;
+        for (int j = 0; j < length; j++) {
+            for (int k = j; k < length; k++) {
+                if (a[j][i] > a[k][i]) {
+                    temp = a[j];
+                    a[j] = a[k];
+                    a[k] = temp;
+                }
+            }
+        }
+    }
+}
+
 
 void Caulate_Sort(int Array[], int len, int max) {
     int *c;
@@ -32,7 +52,7 @@ void Caulate_Sort(int Array[], int len, int max) {
     free(b);
 }
 
-void test5(){
+void testCalate() {
     clock_t start, finish;
     double time;
     int a[200];
@@ -45,7 +65,7 @@ void test5(){
 
     toNewString(a, 200);
     printf("\n");
-    Caulate_Sort(a, 200,200);
+    Caulate_Sort(a, 200, 200);
     printf("\n");
     toNewString(a, 200);
 
@@ -54,6 +74,25 @@ void test5(){
     time = (double) (finish - start) / CLOCKS_PER_SEC;
 
     printf("It's cost %lf second!\n", time);
+}
+
+void test5(){
+    int len = 10;
+
+    int char_len = 5;
+
+    char **str = new char*[len];
+    for (int k = 0; k < len; ++k) {
+        str[k] = new char[char_len];
+    }
+    for (int i = 0; i < len; ++i) {
+        for (int j = 0; j < char_len; ++j) {
+            str[i][j] = (rand() % 26)+97;
+        }
+    }
+    toNewString(str,len);
+    Card_Sort(str,char_len,len);
+    toNewString(str,len);
 }
 
 //

@@ -5,7 +5,6 @@ void dijkstra(
         const vector<vector<int> > &adjmap,//邻接矩阵，通过传引用避免拷贝
         vector<int> &dist,//出发点到各点的最短路径长度
         vector<int> &path)//路径上到达该点的前一个点
-//负边被认作不联通
 {
     const int &NODE = adjmap.size();//用邻接矩阵的大小传递顶点个数，减少参数传递
     dist.assign(NODE, -1);//初始化距离为未知
@@ -31,7 +30,7 @@ void dijkstra(
 }
 
 void test7() {
-    int n_num, e_num, beg;//含义见下
+    int n_num, e_num, beg;
     cout << "Enter the point, length, fristpoint: ";
     cin >> n_num >> e_num >> beg;
     vector<vector<int> > adjmap(n_num, vector<int>(n_num, -1));//默认初始化邻接矩阵
