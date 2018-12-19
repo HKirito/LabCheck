@@ -35,7 +35,7 @@ void test7() {
     cin >> n_num >> e_num >> beg;
     vector<vector<int> > adjmap(n_num, vector<int>(n_num, -1));//默认初始化邻接矩阵
     for (int i = 0, p, q; i != e_num; ++i) {
-        cout << "input the " << i + 1 << " lenth begin,end,len(-1 means not found): ";
+        cout << "input the " << i + 1 << " length begin,end,len(-1 means not found): ";
         cin >> p >> q;
         cin >> adjmap[p][q];
     }

@@ -1,3 +1,4 @@
+#include <sstream>
 #include "Encrypt.h"
 
 void Encrypt(){
@@ -6,6 +7,7 @@ void Encrypt(){
     FILE* fp=NULL;
     string text;
     int i = 0;
+    string key;
     cout << "Please input filename you want to encrypt :";
     getline(cin,filename);
     if (filename==""){
@@ -23,8 +25,17 @@ void Encrypt(){
             file.close();
 
             cout<<text<<endl;
+
+            cout<<"Input the key :";
+            getline(cin,key);
+
+            stringstream keys;//getline获取到的string转为int
+            keys<<key;
+            int keyi;
+            keys>>keyi;
+
             while(text[i]!=NULL){
-                text[i]+=2;
+                text[i]+=keyi;
                 i++;
             }
             cout<<text<<endl;
@@ -47,6 +58,7 @@ void Encrypted(){
     FILE* fp=NULL;
     string text;
     int i = 0;
+    string key;
     cout << "Please input filename you want to encrypted :";
     getline(cin,filename);
     if (filename==""){
@@ -64,8 +76,16 @@ void Encrypted(){
             file.close();
 
             cout<<text<<endl;
+            cout<<"Input the key :";
+            getline(cin,key);
+
+            stringstream keys;//getline获取到的string转为int
+            keys<<key;
+            int keyi;
+            keys>>keyi;
+
             while(text[i]!=NULL){
-                text[i]-=2;
+                text[i]-=keyi;
                 i++;
             }
             cout<<text<<endl;
@@ -74,7 +94,7 @@ void Encrypted(){
             cout<<filename;
 
             ofstream file2(filename);
-            cout<<file2.is_open();
+            cout<<file2.is_open()<<endl;
             file2<<text;
             file2.close();
             cout<<"Complete operation !";

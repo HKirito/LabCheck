@@ -15,10 +15,10 @@ void toNewString(T a[], int n) {
 
 void Card_Sort(char **a, int d, int length) {
 
-    for (int i = d - 1; i >= 0; i--) {
+    for (int i = d - 1; i >= 0; i--) {//单词长度
         char *temp;
-        for (int j = 0; j < length; j++) {
-            for (int k = j; k < length; k++) {
+        for (int j = 0; j < length; j++) {//单词个数
+            for (int k = j; k < length; k++) {//与其它后面的单词的第i位比较
                 if (a[j][i] > a[k][i]) {
                     temp = a[j];
                     a[j] = a[k];
@@ -28,7 +28,6 @@ void Card_Sort(char **a, int d, int length) {
         }
     }
 }
-
 
 void Caulate_Sort(int Array[], int len, int max) {
     int *c;
@@ -77,11 +76,12 @@ void testCalate() {
 }
 
 void test5(){
-    int len = 10;
+    int len = 10;//单词个数
 
-    int char_len = 5;
+    int char_len = 5;//字符长度
 
     char **str = new char*[len];
+
     for (int k = 0; k < len; ++k) {
         str[k] = new char[char_len];
     }
